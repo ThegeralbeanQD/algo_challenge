@@ -129,4 +129,65 @@ const shortestString = function(arr) {
     return smallestString;
 }
 
-console.log(shortestString(['I', 'prefer', 'marshmallow', 'to', 'oreo']));
+function sortMonths(months){
+    for (let i = 0; i < months.length - 1; i++) {
+      let minIndex = i;
+      for (let j = i + 1; j < months.length; j++) {
+        if (months[j] < months[minIndex]) {
+          minIndex = j;
+        }
+      }
+      if (minIndex !== i) {
+        // swap arr[i] and arr[minIndex]
+        let temp = months[i];
+        months[i] = months[minIndex];
+        months[minIndex] = temp;
+      }
+    }
+    return months;
+  }
+//   console.log(sortMonths(['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August',
+//   'September', 'October', 'November', 'December']));
+
+
+// console.log(shortestString(['I', 'prefer', 'marshmallow', 'to', 'oreo']));
+
+let capitals = function (word) {
+    let capitalLetters = [];
+    
+      for (let i = 0; i < word.length; i++){
+      if (word.charAt(i) === word.charAt(i).toUpperCase()){
+        // capitalLetters.push(word.indexOf(word.charAt(i)))
+        capitalLetters.push(i)
+      }
+    }
+    
+    // return capitalLetters.sort();
+    return capitalLetters.sort();
+  };
+
+//   console.log(capitals('CodEWaRs'));
+
+function sortNames(trainers){
+    return trainers.sort();
+}
+
+// console.log(sortNames(["Ree", "Romeo", "Emile", "Sergi"]));
+
+function countLetters(str) {
+    const counts = {};
+    for (let i = 0; i < str.length; i++) {
+      const letter = str[i];
+      if (counts[letter]) {
+        counts[letter]++;
+      } else {
+        counts[letter] = 1;
+      }
+    }
+    return counts;
+  }
+  
+  // Example usage:
+
+//   console.log(countLetters('Hello I am a random sentence, we heve learnt HTML, CSS and GitHub so far. Thanks')); 
+  
